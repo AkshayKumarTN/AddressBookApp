@@ -27,42 +27,13 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
 });
 
-const getAddressBookDataFromStorage = (index) => {
-    return localStorage.getItem('addressBookList') ?
-        JSON.parse(localStorage.getItem('addressBookList'))[index] : [];
-};
-
-const setRecords = (contactList) => {
-    setValue("#name", contactList._name);
-    setValue('#phone-number', contactList._phoneNumber);
-    setValue('#address', contactList._address);
-    setValue('#city', contactList._city);
-    setValue('#state', contactList._state);
-    setValue('#zip-code', contactList._zipCode);
-};
-
 const save = () => {
     try {
         let addressBookData = createAddressBook();
         createAndUpdateStorage(addressBookData);
     } catch (e) {
-        console.log(e);
         return;
     }
-}
-
-const resetForm = () => {
-    setValue("#name", "")
-    setValue("#phone-number", "");
-    setValue("#address", "");
-    setValue("#city", "");
-    setValue("#state", "");
-    setValue("#zip-code", "");
-}
-
-const setValue = (id, value) => {
-    const element = document.querySelector(id);
-    element.value = value;
 }
 
 const createAddressBook = () => {
@@ -98,6 +69,38 @@ function createAndUpdateStorage(addressBookData) {
     alert(addressBookList.toString());
     localStorage.setItem("addressBookList", JSON.stringify(addressBookList));
 }
+
+const getAddressBookDataFromStorage = (index) => {
+    return localStorage.getItem('addressBookList') ?
+        JSON.parse(localStorage.getItem('addressBookList'))[index] : [];
+};
+
+const setRecords = (contactList) => {
+    setValue("#name", contactList._name);
+    setValue('#phone-number', contactList._phoneNumber);
+    setValue('#address', contactList._address);
+    setValue('#city', contactList._city);
+    setValue('#state', contactList._state);
+    setValue('#zip-code', contactList._zipCode);
+};
+
+
+
+const resetForm = () => {
+    setValue("#name", "")
+    setValue("#phone-number", "");
+    setValue("#address", "");
+    setValue("#city", "");
+    setValue("#state", "");
+    setValue("#zip-code", "");
+}
+
+const setValue = (id, value) => {
+    const element = document.querySelector(id);
+    element.value = value;
+}
+
+
 
 // const getSelectedValues = (propertyValue) => {
 //     let allItems = document.querySelectorAll(propertyValue);

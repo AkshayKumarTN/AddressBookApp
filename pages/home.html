@@ -24,40 +24,19 @@
     <div class="main-content">
         <div class="form-header-content">
             <div class="person-detail-text">
-                Person Details
+                Person Details  <div class="emp-count"> 10 </div>
             </div>
             <div class="header-button">
                 <a href="addPerson.html" class="add-button">
                 <img src="../assets/icons/add-24px.svg" alt="+">  Add Person</a>
             </div>            
         </div>
-        <table id="table-display" class="table">
-            <tr>
-                <th></th>
-                <th>Full Name</th>
-                <th>Address</th>
-                <th>City</th>
-                <th>State</th>
-                <th>Zip Code</th>
-                <th>Phone Number</th>
-                <th>Actions</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td>Jhon Wick</td>
-                <td>Ramapuram</td>
-                <td>Chennai</td>
-                <td>Tanil Nadu</td>
-                <td>600068</td>
-                <td>+91 9876543291</td>
-                <td>
-                    <img id="1" onclick="remove(this)" src="../assets/icons/delete-black-18dp.svg" alt="delete">
-                    <img id="1" onclick="update(this)" src="../assets/icons/create-black-18dp.svg" alt="edit">
-                </td>
-            </tr>
+        <table id="display" class="table">
         </table>
     </div>
 
     <script defer src="../js/home.js"></script>
+    <script defer src="../js/addPerson.js"></script>
+    <script defer src="../js/Person.js"></script>
 </body>
 </html>
